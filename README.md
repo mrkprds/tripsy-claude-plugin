@@ -4,6 +4,8 @@ Connects Claude to [Tripsy](https://tripsy.app), the travel planner, through Tri
 
 The server runs as a local process and authenticates with a token stored by the Tripsy CLI — no OAuth connector flow, which makes it usable on accounts where custom remote connectors are disabled.
 
+The plugin launches `tripsy-mcp` through `bin/tripsy-mcp-shim.py`, which fixes a framing bug in tripsy-cli 1.6.2: the stdio annotation normalizer drops the trailing newline on `tools/list` responses, so clients hang waiting for the tool list. The shim re-emits each JSON-RPC message on its own line. It finds the binary via `$TRIPSY_MCP_BIN`, then `~/.local/bin/tripsy-mcp`, then `$PATH`.
+
 ## Prerequisites
 
 Install the Tripsy CLI and log in once:
@@ -15,7 +17,7 @@ tripsy auth login --username you@example.com
 
 This installs `tripsy` and `tripsy-mcp` to `~/.local/bin` and stores your token in the OS credential store (macOS Keychain).
 
-> **Note:** `.mcp.json` points at `/Users/patrickperdon/.local/bin/tripsy-mcp`. If your username or install dir differs, edit that path. It's absolute because GUI apps don't inherit your shell PATH.
+> **Note:** if you installed `tripsy-mcp` somewhere other than `~/.local/bin`, set `TRIPSY_MCP_BIN` to its path in the server `env` in `.mcp.json`.
 
 ## Install
 

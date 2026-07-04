@@ -2,7 +2,8 @@
   "mcpServers": {
     "tripsy": {
       "type": "stdio",
-      "command": "/Users/patrickperdon/.local/bin/tripsy-mcp"
+      "command": "/usr/bin/python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/bin/tripsy-mcp-shim.py"]
     }
   }
 }
