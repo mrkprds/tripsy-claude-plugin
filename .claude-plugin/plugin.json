@@ -1,7 +1,7 @@
 {
   "name": "tripsy",
   "description": "Connect Claude to Tripsy — plan trips, add activities, organize reservations, track expenses, and keep your itinerary in sync via Tripsy's official MCP server.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Patrick Perdon"
   },

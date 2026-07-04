@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "tripsy": {
-      "type": "http",
-      "url": "https://mcp.tripsy.app/"
+      "type": "stdio",
+      "command": "/Users/patrickperdon/.local/bin/tripsy-mcp"
     }
   }
 }
