@@ -1,0 +1,17 @@
+{
+  "name": "tripsy-marketplace",
+  "owner": {
+    "name": "Patrick Perdon"
+  },
+  "metadata": {
+    "description": "Marketplace hosting the Tripsy MCP connector plugin for Claude.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "tripsy",
+      "source": "./",
+      "description": "Connect Claude to Tripsy — plan trips, add activities, organize reservations, track expenses, and keep your itinerary in sync via Tripsy's official MCP server."
+    }
+  ]
+}
